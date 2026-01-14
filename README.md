@@ -21,3 +21,11 @@ January 12-16
   - matplotlib
   - decorators
   - exercises
+
+
+#### Wednesday :
+
+  - scripts
+  - classes
+  - Exercises
+
