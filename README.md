@@ -29,3 +29,8 @@ January 12-16
   - classes
   - Exercises
 
+### Thursday
+  - live coding session
+  - pandas
+  - exercises
+
