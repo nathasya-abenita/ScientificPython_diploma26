@@ -18,8 +18,11 @@ class Jacobi:
         self.mat[1:-1, 1:-1] = 0.5
 
     def evolve(self):
-        new_mat = s
-        
+        # Compute neighbors
+        new_mat = self.mat[:-2, 1:-1]  \
+                + self.mat[1:-1, :-2] + self.mat[1:-1, 2:] \
+                + self.mat[2:, 1:-1]
+        # Swap
         self.mat[1:-1, 1:-1] = new_mat * 0.25  
 
     def run(self, n, filename='last_iteration.png'):
@@ -29,13 +32,13 @@ class Jacobi:
         plt.savefig(filename)
 
     def animate(self, n_iter):
-        plt.clf()
         plt.imshow(self.mat)
         plt.title(f'number of iteration = {n_iter}')
         plt.colorbar()
         plt.xlim(0, self.n-0.5)
         plt.ylim(0, self.m-0.5)
         plt.pause(0.05)
+        plt.clf()
 
 if __name__ == '__main__':
     # Define grid size as m by n matrix
